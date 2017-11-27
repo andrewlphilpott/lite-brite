@@ -1,0 +1,130 @@
+/*-------------------------------------------
+  Colors
+-------------------------------------------*/
+// Light colors
+$red: #ea3222;
+$orange: #ff8200;
+$amarillo: #fBd500;
+$green: #20a841;
+$teal: #40e0d0;
+$blue: #286cf4;
+$indigo: #a13eff;
+$violet: #ff84f9;
+$white: #fff;
+
+// Grays
+$black: #000;
+$gray: #526069;
+$gray-dark: #37474f;
+$gray-light: #76838f;
+$gray-extra-light: #f3f7f9;
+
+// UI colors
+$text: $gray;
+$text-dark: $gray-dark;
+$text-light: $gray-light;
+$border-color: $gray-light;
+$tan: #f7f1e3;
+
+// State colors
+$success: $green;
+$plus-color: $green;
+$warning: $amarillo;
+$error: $red;
+$minus-color: $red;
+
+// Loopable colors
+$colors: (
+  red: $red,
+  orange: $orange,
+  amarillo: $amarillo,
+  green: $green,
+  teal: $teal,
+  blue: $blue,
+  indigo: $indigo,
+  violet: $violet,
+  blanco: $white
+);
+
+/*-------------------------------------------
+  Fonts
+-------------------------------------------*/
+$sans-serif: 'Source Sans Pro', sans-serif;
+
+/*-------------------------------------------
+  Stacking
+-------------------------------------------*/
+$bottom: 1000;
+$middle: 2000;
+$top: 3000;
+
+/*-------------------------------------------
+  Breakpoints
+-------------------------------------------*/
+// Min-up
+$mobile: rem(320);
+$mobile-lg: rem(460);
+$tablet: rem(768);
+$desktop-sm: rem(820);
+$desktop: rem(1024);
+
+// Max-down
+$mobile-down: rem(319);
+$mobile-lg-down: rem(459);
+$tablet-down: rem(767);
+$desktop-down: rem(1023);
+
+/*-------------------------------------------
+  Grid settings
+-------------------------------------------*/
+$page-padding: 15px;
+$page-padding-lg: 30px;
+
+@include min-up($tablet) {
+  $padding-size: 30px;
+}
+
+/*-------------------------------------------
+  Misc
+-------------------------------------------*/
+
+// Border radius
+$border-radius-amount: 2px;
+$border-radius-all: $border-radius-amount;
+$border-radius-top: $border-radius-amount $border-radius-amount 0 0;
+$border-radius-bottom: 0 0 $border-radius-amount $border-radius-amount;
+$border-radius-left: $border-radius-amount 0 0 $border-radius-amount;
+$border-radius-right: 0 $border-radius-amount $border-radius-amount 0;
+
+// Box shadows
+$box-shadow-small: 0 1px 1px 0 transparentize($black, .95);
+$box-shadow-normal: 0 3px 12px 0 transparentize($black, .95);
+$box-shadow-large: 0 6px 20px 0 transparentize($black, .85);
+$box-shadow-drawer: 0 0 20px 0 transparentize($black, .75);
+$box-shadow-inset-normal: inset 0 2px 3px 0 transparentize($black, .95);
+
+/*-------------------------------------------
+  Text inputs
+-------------------------------------------*/
+$text-input-list: (
+  'input[type="color"]',
+  'input[type="date"]',
+  'input[type="datetime-local"]',
+  'input[type="datetime"]',
+  'input[type="email"]',
+  'input[type="month"]',
+  'input[type="number"]',
+  'input[type="password"]',
+  'input[type="search"]',
+  'input[type="tel"]',
+  'input[type="text"]',
+  'input[type="time"]',
+  'input[type="url"]',
+  'input[type="week"]',
+);
+
+$all-text-inputs: ();
+
+@each $input in $text-input-list {
+  $all-text-inputs: append($all-text-inputs, $input, comma);
+}

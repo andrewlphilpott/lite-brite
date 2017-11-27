@@ -1,0 +1,43 @@
+{
+  "name": "lite-brite",
+  "homepage": ".",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "8.0.2",
+    "concurrently": "3.0.0",
+    "eslint": "3.5.0",
+    "react-scripts": "1.0.17",
+    "node-sass": "^4.5.0",
+    "node-sass-magic-importer": "^4.1.1",
+    "autoprefixer": "^6.7.2",
+    "postcss": "^5.2.12",
+    "postcss-cli": "^2.6.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "history": "^4.7.2",
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.0",
+    "react-scripts": "1.0.17",
+    "uuid": "^3.1.0",
+    "uuid-validate": "^0.0.2"
+  },
+  "scripts": {
+    "start": "concurrently --names \"webpack, node-sass\" --prefix name \"npm run scripts\" \"npm run watch-styles\"",
+    "build": "node bin/build.js",
+    "eject": "react-scripts eject",
+    "scripts": "react-scripts start",
+    "styles": "node-sass --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style 'compressed' ./src/scss/ -o ./src/css/ && ./node_modules/postcss-cli/bin/postcss -u autoprefixer ./src/css/*.css -d ./src/css/",
+    "watch-styles": "nodemon -e scss -x 'npm run styles'",
+    "deploy": "ns ./build --cmd 'list ./content -s'"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/.eslintrc"
+  }
+}

@@ -1,0 +1,14 @@
+/*-------------------------------------------
+  Toolbar styles
+-------------------------------------------*/
+.toolbar {
+  bottom: 0;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+/*-------------------------------------------
+  Global styles
+-------------------------------------------*/
+body {
+  background: $tan;
+  color: $text;
+  font-family: $sans-serif;
+}
+
+// Reusable color swatch
+// (used for color selector and bulbs)
+%color {
+  background: $black;
+  border-radius: $border-radius-all;
+  display: block;
+  height: rem(30);
+  width: rem(30);
+
+  @each $colorName, $color in $colors {
+    &[data-color="#{$colorName}"] {
+      background: $color;
+    }
+  }
+}

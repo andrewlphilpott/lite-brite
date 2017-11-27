@@ -1,0 +1,30 @@
+/*-------------------------------------------
+  Icon styles
+-------------------------------------------*/
+$icn-margin: 5px;
+
+%icn, .icn {
+  display: inline-block;
+  @extend %antialias;
+  height: 16px;
+  position: relative;
+  width: 16px;
+
+  g[fill-rule] {
+    path {
+      fill: $gray-light;
+    }
+  }
+}
+%icn-before {
+  &:before {
+    @extend %icn;
+    margin-right: $icn-margin;
+  }
+}
+%icn-after {
+  &:after {
+    @extend %icn;
+    margin-left: $icn-margin;
+  }
+}

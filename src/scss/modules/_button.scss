@@ -1,0 +1,38 @@
+/*-------------------------------------------
+  Button styles
+-------------------------------------------*/
+.btn {
+  background: $blue;
+  border-radius: $border-radius-all;
+  border: none;
+  color: $white;
+  display: inline-block;
+  font-weight: 300;
+  margin: 0;
+  overflow: hidden;
+  padding: 4px 10px;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    background: transparentize($white, .8);
+    border-radius: $border-radius-all;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0);
+    @extend %transition;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

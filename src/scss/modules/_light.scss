@@ -1,0 +1,32 @@
+/*-------------------------------------------
+  Light styles
+-------------------------------------------*/
+// Grid of lights
+.lights {
+  @extend %list-reset;
+  display: flex;
+  flex-flow: row wrap;
+  height: rem(480);
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  width: rem(320);
+}
+.light {
+  flex-basis: 5%;
+}
+
+// Individual light bulbs
+.light__bulb {
+  @extend %btn-reset;
+  @extend %color;
+  background: $black;
+  display: block;
+  margin: .5px;
+  height: rem(19);
+  width: rem(19);
+
+  .light:nth-child(10n) & {
+    border-right: none;
+  }
+}
