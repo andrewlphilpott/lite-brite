@@ -4,7 +4,8 @@ import SessionStore from './SessionStore';
 
 let obx = observable({
   lights: [],
-  lightCount: 384,
+  // lightCount: 384,
+  lightCount: 372,
   colors: [
     '',
     'red',

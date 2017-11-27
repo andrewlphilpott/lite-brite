@@ -7,13 +7,18 @@
   display: flex;
   flex-flow: row wrap;
   height: rem(480);
-  justify-content: space-between;
+  // justify-content: space-between;
   margin: 0 auto;
   position: relative;
   width: rem(320);
 }
 .light {
   flex-basis: 5%;
+
+  &:nth-child(17),
+  &:nth-child(31n + 17) {
+    margin-left: 10px;
+  }
 }
 
 // Individual light bulbs
@@ -21,6 +26,7 @@
   @extend %btn-reset;
   @extend %color;
   background: $black;
+  border-radius: 50%;
   display: block;
   margin: .5px;
   height: rem(19);

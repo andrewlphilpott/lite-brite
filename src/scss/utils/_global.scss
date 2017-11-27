@@ -2,7 +2,7 @@
   Global styles
 -------------------------------------------*/
 body {
-  background: $tan;
+  background: $gray-dark;
   color: $text;
   font-family: $sans-serif;
 }
@@ -19,6 +19,12 @@ body {
   @each $colorName, $color in $colors {
     &[data-color="#{$colorName}"] {
       background: $color;
+
+      &.light__bulb {
+        box-shadow: 0 0 10px 0 $color,
+                    inset 0 3px 5px 0 transparentize($white, .75),
+                    0 2px 3px 0 transparentize($black, .5);
+      }
     }
   }
 }
