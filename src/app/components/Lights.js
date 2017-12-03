@@ -49,6 +49,7 @@ const Lights = observer(class Lights extends React.Component {
     if(light.hasAttribute('data-i')) {
       const i = light.getAttribute('data-i');
       this.props.store.LightStore.lights[i].color = this.props.store.LightStore.selectedColor;
+      this.props.store.LightStore.lights[i].flash = this.props.store.LightStore.flash;
       this.props.store.LightStore.submit();
     }
   }

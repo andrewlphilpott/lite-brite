@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "concurrently --names \"webpack, node-sass\" --prefix name \"npm run scripts\" \"npm run watch-styles\"",
-    "build": "react-scripts build && mv build docs",
+    "build": "rm -r docs && react-scripts build && mv build docs",
     "eject": "react-scripts eject",
     "scripts": "react-scripts start",
     "styles": "node-sass --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style 'compressed' ./src/scss/ -o ./src/css/ && ./node_modules/postcss-cli/bin/postcss -u autoprefixer ./src/css/*.css -d ./src/css/",
