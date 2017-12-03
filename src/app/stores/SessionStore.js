@@ -31,6 +31,43 @@ let obx = observable({
         obx.loadingMessage = null;
       }, 250);
     }
+  }),
+  dialogVisible: false,
+  dialog: {},
+  dialogCode: null,
+  dialogClass: '',
+  dialogCancel: false,
+  dialogCallback: null,
+  showDialog: action(function(content, showCancel, callback){
+    obx.dialog = content;
+    obx.dialogCancel = showCancel;
+
+    if(callback) {
+      obx.dialogCallback = callback;
+    }
+
+    obx.dialogVisible = true;
+  }),
+  hideDialog: action(function(){
+    // Trigger the exit animation
+    obx.dialogClass = 'exit';
+
+    // Remove the dialog after the animation finishes
+    setTimeout(function(){
+      obx.dialog = {};
+      obx.dialogCode = null;
+      obx.dialogClass = '';
+      obx.dialogCancel = false;
+      obx.dialogCallback = null;
+      obx.dialogVisible = false;
+    }, 250);
+  }),
+  confirmDialog: action(function(){
+    if(obx.dialogCallback) {
+      obx.dialogCallback();
+    }
+
+    obx.hideDialog();
   })
 });
 

@@ -1,0 +1,43 @@
+/*-------------------------------------------
+  Action styles
+-------------------------------------------*/
+.actions {
+  margin-left: auto;
+  pointer-events: all;
+  transform: translateY(rem(6));
+}
+.actions__list {
+  @extend %inline-list;
+
+  > li {
+    + li {
+      margin-left: 20px;
+    }
+  }
+}
+.actions__btn {
+  @extend %btn-reset;
+  height: rem(40);
+  position: relative;
+  width: rem(40);
+
+  .icn {
+    @extend %center-both;
+    fill: transparentize($white, .35);
+    height: rem(32);
+    position: absolute;
+    @extend %transition;
+    width: rem(32);
+  }
+  .icn-trash,
+  .icn-share {
+    height: rem(30);
+    width: rem(30);
+  }
+
+  &:hover {
+    .icn {
+      fill: $white;
+    }
+  }
+}

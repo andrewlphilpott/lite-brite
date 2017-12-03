@@ -4,7 +4,6 @@
 // Font sizes, line-heights, and margins
 %h1 {font-size: rem(26)}
 %h2 {font-size: rem(22)}
-%h3_5 {font-size: rem(20)}
 %h3 {font-size: rem(20)}
 %h4 {font-size: rem(16)}
 %h5 {font-size: rem(14)}
@@ -23,11 +22,11 @@ h3 {
   @extend %h3;
   line-height: 1.5;
 }
-h4 {
+h4, p, ol, ul, dl {
   @extend %h4;
   line-height: 1.5625;
 }
-h5, p, ol, ul, dl {
+h5 {
   @extend %h5;
   line-height: 1.5;
 }

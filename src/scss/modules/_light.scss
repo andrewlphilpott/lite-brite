@@ -8,17 +8,18 @@
   flex-flow: row wrap;
   height: rem(480);
   // justify-content: space-between;
-  margin: 0 auto;
+  margin: rem(40) auto;
   position: relative;
+  user-select: none;
   width: rem(320);
 }
 .light {
   flex-basis: 5%;
 
-  &:nth-child(17),
-  &:nth-child(31n + 17) {
-    margin-left: 10px;
-  }
+  // &:nth-child(17),
+  // &:nth-child(31n + 17) {
+  //   margin-left: 10px;
+  // }
 }
 
 // Individual light bulbs
@@ -34,5 +35,39 @@
 
   .light:nth-child(10n) & {
     border-right: none;
+  }
+
+  &.flash {
+    animation: bulbFlash 1s linear infinite;
+  }
+
+  .light:nth-child(2n) &.flash {
+    animation-delay: .125s;
+  }
+  .light:nth-child(3n) &.flash {
+    animation-delay: .25s;
+  }
+  .light:nth-child(4n) &.flash {
+    animation-delay: .375s;
+  }
+  .light:nth-child(5n) &.flash {
+    animation-delay: .5s;
+  }
+  .light:nth-child(6n) &.flash {
+    animation-delay: .625s;
+  }
+  .light:nth-child(7n) &.flash {
+    animation-delay: .75s;
+  }
+}
+
+// Flashing bulb animation
+@keyframes bulbFlash {
+  from {
+    opacity: 1;
+  } 50% {
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 }

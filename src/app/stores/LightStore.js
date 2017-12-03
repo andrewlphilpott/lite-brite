@@ -4,8 +4,8 @@ import SessionStore from './SessionStore';
 
 let obx = observable({
   lights: [],
-  // lightCount: 384,
-  lightCount: 372,
+  lightCount: 384,
+  // lightCount: 372,
   colors: [
     '',
     'red',
@@ -18,7 +18,8 @@ let obx = observable({
     'violet',
     'blanco'
   ],
-  selectedColor: '',
+  selectedColor: 'red',
+  flash: false,
   // Create light objects
   generateLights: action(function(){
     let i = 1;
@@ -26,7 +27,8 @@ let obx = observable({
     while(i <= obx.lightCount) {
       const light = {
         id: i,
-        color: ''
+        color: '',
+        flash: false
       }
 
       obx.lights.push(light);
@@ -37,6 +39,35 @@ let obx = observable({
   // Set the color
   setColor: action(function(color){
     obx.selectedColor = color;
+  }),
+  // Randomize
+  randomize: action(function(){
+    obx.lights.forEach(light => {
+      const random = Math.floor(Math.random() * (8 + 1));
+      light.color = obx.colors[random + 1];
+    });
+
+    obx.submit();
+  }),
+  // Share
+  share: action(function(){
+    const content = {
+      heading: 'Share your work',
+      body: 'Send the link below to a friend to allow them to view and collaborate.',
+      button: 'Done'
+    }
+
+    SessionStore.dialogCode = window.location.href;
+    SessionStore.showDialog(content, false);
+  }),
+  // Delete
+  delete: action(function(){
+    obx.lights.forEach(light => {
+      light.color = '';
+      light.flash = false;
+    });
+
+    obx.submit();
   }),
   // Submit
   submit: action(function(){

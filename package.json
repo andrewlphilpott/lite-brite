@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "babel-eslint": "8.0.2",
+    "babel-eslint": "7.2.3",
     "concurrently": "3.0.0",
-    "eslint": "3.5.0",
+    "eslint": "4.1.1",
     "react-scripts": "1.0.17",
     "node-sass": "^4.5.0",
     "node-sass-magic-importer": "^4.1.1",
@@ -25,8 +25,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.0",
     "react-scripts": "1.0.17",
-    "uuid": "^3.1.0",
-    "uuid-validate": "^0.0.2"
+    "spur-events": "^0.1.8",
+    "uniqid": "^4.1.1"
   },
   "scripts": {
     "start": "concurrently --names \"webpack, node-sass\" --prefix name \"npm run scripts\" \"npm run watch-styles\"",

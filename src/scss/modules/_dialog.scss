@@ -1,0 +1,68 @@
+/*-------------------------------------------
+  Dialog styles
+-------------------------------------------*/
+.dialog-wrap {
+  @extend %overlay-container;
+}
+.dialog {
+  @extend %overlay-msg;
+  animation: dialogEnter .25s ease 1;
+  background: $white;
+  border-radius: $border-radius-all;
+  box-shadow: $box-shadow-normal;
+  font-weight: 300;
+  padding: $page-padding;
+  text-align: left;
+  width: rem(310);
+
+  &.exit {
+    animation: dialogExit .25s ease 1;
+  }
+}
+.dialog__title {
+  font-weight: 300;
+  margin-bottom: rem(10);
+}
+.dialog__body {
+  margin-bottom: $page-padding;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.dialog__code {
+  border: 1px solid $border-color;
+}
+.dialog__action {
+  text-align: right;
+
+  .btn {
+    + .btn {
+      margin-left: rem(10);
+    }
+  }
+}
+
+// Dialog enter animation
+@keyframes dialogEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  } to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Dialog exit animation
+@keyframes dialogExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  } to {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}

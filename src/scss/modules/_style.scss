@@ -1,0 +1,39 @@
+/*-------------------------------------------
+  Style styles
+-------------------------------------------*/
+.style {
+  margin-left: rem(20);
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(rem(-4));
+  transition: all .25s .35s ease;
+
+  .colors--active + & {
+    opacity: 0;
+    transition: all .25s ease;
+  }
+}
+.style__flash {
+  cursor: pointer;
+  display: block;
+  height: rem(40);
+  position: relative;
+  width: rem(40);
+
+  input {
+    display: none;
+  }
+
+  .icn {
+    @extend %center-both;
+    fill: transparentize($white, .5);
+    height: rem(32);
+    position: absolute;
+    @extend %transition;
+    width: rem(32);
+  }
+
+  input:checked + .icn {
+    fill: $white;
+  }
+}

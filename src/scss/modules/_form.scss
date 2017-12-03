@@ -1,0 +1,16 @@
+/*-------------------------------------------
+  Form styles
+-------------------------------------------*/
+#{$all-text-inputs} {
+  appearance: none;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  color: $text;
+  font-weight: 300;
+  padding: 5px 0 5px 10px;
+  width: 100%;
+
+  &:focus {
+    border-color: $blue;
+  }
+}

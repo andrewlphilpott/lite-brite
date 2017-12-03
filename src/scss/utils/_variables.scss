@@ -23,8 +23,8 @@ $gray-extra-light: #f3f7f9;
 $text: $gray;
 $text-dark: $gray-dark;
 $text-light: $gray-light;
-$border-color: $gray-light;
-$tan: #f7f1e3;
+$border-color: lighten($gray-light, 30);
+$link-color: $blue;
 
 // State colors
 $success: $green;
@@ -98,7 +98,7 @@ $border-radius-right: 0 $border-radius-amount $border-radius-amount 0;
 
 // Box shadows
 $box-shadow-small: 0 1px 1px 0 transparentize($black, .95);
-$box-shadow-normal: 0 3px 12px 0 transparentize($black, .95);
+$box-shadow-normal: 0 3px 12px 0 transparentize($black, .5);
 $box-shadow-large: 0 6px 20px 0 transparentize($black, .85);
 $box-shadow-drawer: 0 0 20px 0 transparentize($black, .75);
 $box-shadow-inset-normal: inset 0 2px 3px 0 transparentize($black, .95);
