@@ -4,10 +4,10 @@
 .actions {
   margin-left: auto;
   pointer-events: all;
-  transform: translateY(rem(6));
 }
 .actions__list {
   @extend %inline-list;
+  height: rem(40);
 
   > li {
     + li {

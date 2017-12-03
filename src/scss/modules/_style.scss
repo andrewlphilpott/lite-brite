@@ -5,7 +5,6 @@
   margin-left: rem(20);
   opacity: 1;
   pointer-events: all;
-  transform: translateY(rem(-4));
   transition: all .25s .35s ease;
 
   .colors--active + & {
