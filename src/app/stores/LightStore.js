@@ -20,6 +20,7 @@ let obx = observable({
   ],
   selectedColor: 'red',
   flash: false,
+  saved: false,
   // Create light objects
   generateLights: action(function(){
     let i = 1;
@@ -47,7 +48,9 @@ let obx = observable({
       light.color = obx.colors[random + 1];
     });
 
-    obx.submit();
+    if(obx.saved) {
+      obx.submit();
+    }
   }),
   // Share
   share: action(function(){
@@ -59,6 +62,9 @@ let obx = observable({
 
     SessionStore.dialogCode = window.location.href;
     SessionStore.showDialog(content, false);
+
+    // Make sure it’s being saved
+    obx.save();
   }),
   // Delete
   delete: action(function(){
@@ -67,6 +73,13 @@ let obx = observable({
       light.flash = false;
     });
 
+    if(obx.saved) {
+      obx.submit();
+    }
+  }),
+  // Save
+  save: action(function(){
+    obx.saved = true;
     obx.submit();
   }),
   // Submit

@@ -143,6 +143,16 @@ const Toolbar = observer(class Toolbar extends React.Component {
             </li>
             <li>
               <button
+                className="actions__btn actions__save"
+                onClick={LightStore.save}
+                title="Save"
+              >
+                <icons.iconSave />
+                <span className="meta">Save</span>
+              </button>
+            </li>
+            <li>
+              <button
                 className="actions__btn actions__delete"
                 onClick={this.handleDelete}
                 title="Delete"

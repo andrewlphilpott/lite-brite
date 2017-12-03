@@ -34,6 +34,17 @@ export class iconFlash extends React.Component {
   }
 }
 
+export class iconSave extends React.Component {
+  render() {
+    return (
+      <svg aria-hidden="true" className="icn icn-save" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="icn-save-title">
+        <title id="icn-save-title">Save</title>
+        <path d="M21.3431458,0 L0,0 L0,24 L24,24 L24,2.65685425 L21.3431458,-1.66533454e-16 Z M2,13 L22,13 L22,22 L2,22 L2,13 Z M7,2 L19,2 L19,9 L7,9 L7,2 Z M15,3 L18,3 L18,8 L15,8 L15,3 Z M4,15 L20,15 L20,16 L4,16 L4,15 Z M4,19 L19,19 L19,20 L4,20 L4,19 Z M4,17 L16,17 L16,18 L4,18 L4,17 Z"></path>
+      </svg>
+    );
+  }
+}
+
 export class iconShare extends React.Component {
   render() {
     return (

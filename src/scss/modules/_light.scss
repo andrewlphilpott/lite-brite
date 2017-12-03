@@ -29,7 +29,6 @@
 .light__bulb {
   @extend %btn-reset;
   @extend %color;
-  border-radius: 50%;
   display: block;
   height: rem(19);
   transform: translateZ(0);

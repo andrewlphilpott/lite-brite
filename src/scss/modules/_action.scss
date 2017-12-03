@@ -7,7 +7,7 @@
 }
 .actions__list {
   @extend %inline-list;
-  height: rem(40);
+  height: rem(30);
 
   > li {
     + li {
@@ -17,23 +17,23 @@
 }
 .actions__btn {
   @extend %btn-reset;
-  height: rem(40);
+  height: rem(30);
   position: relative;
-  width: rem(40);
+  width: rem(30);
 
   .icn {
     @extend %center-both;
     fill: transparentize($white, .35);
-    height: rem(32);
+    height: rem(24);
     position: absolute;
     @extend %transition;
-    width: rem(32);
+    width: rem(24);
   }
-  .icn-trash,
-  .icn-share {
-    height: rem(30);
-    width: rem(30);
-  }
+  // .icn-trash,
+  // .icn-share {
+  //   height: rem(22);
+  //   width: rem(22);
+  // }
 
   &:hover {
     .icn {

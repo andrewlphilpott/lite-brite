@@ -16,7 +16,7 @@
   width: rem(310);
 
   &.exit {
-    animation: dialogExit .25s ease 1;
+    animation: dialogExit .25s ease 1 forwards;
   }
 }
 .dialog__title {

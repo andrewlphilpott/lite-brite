@@ -37,7 +37,10 @@ const Lights = observer(class Lights extends React.Component {
       ) {
       light.color = this.props.store.LightStore.selectedColor;
       light.flash = this.props.store.LightStore.flash;
-      this.props.store.LightStore.submit();
+
+      if(this.props.store.LightStore.saved) {
+        this.props.store.LightStore.submit();
+      }
     }
   }
 
@@ -50,7 +53,10 @@ const Lights = observer(class Lights extends React.Component {
       const i = light.getAttribute('data-i');
       this.props.store.LightStore.lights[i].color = this.props.store.LightStore.selectedColor;
       this.props.store.LightStore.lights[i].flash = this.props.store.LightStore.flash;
-      this.props.store.LightStore.submit();
+
+      if(this.props.store.LightStore.saved) {
+        this.props.store.LightStore.submit();
+      }
     }
   }
 

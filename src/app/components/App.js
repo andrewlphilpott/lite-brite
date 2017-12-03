@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 // Import components
 import Home from './Home';
+import Dialog from './Dialog';
 
 class App extends React.Component {
   render() {
@@ -18,31 +19,7 @@ class App extends React.Component {
         </Switch>
 
         {SessionStore.dialogVisible &&
-          <div className="dialog-wrap">
-            <aside className={`dialog ${SessionStore.dialogClass}`}>
-              <h2 className="dialog__title">{SessionStore.dialog.heading}</h2>
-
-              <div className="dialog__body">
-                <p>{SessionStore.dialog.body}</p>
-
-                {SessionStore.dialogCode &&
-                  <p><a href={SessionStore.dialogCode}>{SessionStore.dialogCode}</a></p>
-                }
-              </div>
-
-              <div className="dialog__action">
-                {SessionStore.dialogCancel &&
-                  <button className="btn btn--secondary" onClick={SessionStore.hideDialog}>
-                    Cancel
-                  </button>
-                }
-
-                <button className="btn" onClick={SessionStore.confirmDialog}>
-                  {SessionStore.dialog.button}
-                </button>
-              </div>
-            </aside>
-          </div>
+          <Dialog {...this.props} />
         }
 
         {SessionStore.loading &&

@@ -64,7 +64,6 @@
 // Swatches
 .color__swatch {
   @extend %color;
-  border-radius: 50%;
   cursor: pointer;
   margin: 1px;
   position: relative;
