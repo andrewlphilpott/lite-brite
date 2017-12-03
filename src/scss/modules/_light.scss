@@ -14,6 +14,9 @@
   width: rem(320);
 }
 .light {
+  background: $black;
+  border-radius: 50%;
+  margin: .5px;
   flex-basis: 5%;
 
   // &:nth-child(17),
@@ -26,11 +29,10 @@
 .light__bulb {
   @extend %btn-reset;
   @extend %color;
-  background: $black;
   border-radius: 50%;
   display: block;
-  margin: .5px;
   height: rem(19);
+  transform: translateZ(0);
   width: rem(19);
 
   .light:nth-child(10n) & {
@@ -64,11 +66,10 @@
 // Flashing bulb animation
 @keyframes bulbFlash {
   from {
-
+    opacity: 1;
   } 50% {
-    background: $black;
-    box-shadow: none;
+    opacity: 0;
   } to {
-
+    opacity: 1;
   }
 }
