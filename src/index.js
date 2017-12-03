@@ -3,7 +3,7 @@ import React from 'react';
 
 // Import dependencies
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // Import styles
 import './css/screen.css';
@@ -16,9 +16,9 @@ import store from './app/stores/';
 
 // Routes
 const router = (
-  <BrowserRouter>
+  <HashRouter>
     <App store={store} />
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // Root DOM element
