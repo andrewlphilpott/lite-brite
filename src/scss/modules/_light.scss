@@ -64,10 +64,11 @@
 // Flashing bulb animation
 @keyframes bulbFlash {
   from {
-    opacity: 1;
+
   } 50% {
-    opacity: 0;
+    background: $black;
+    box-shadow: none;
   } to {
-    opacity: 1;
+
   }
 }
