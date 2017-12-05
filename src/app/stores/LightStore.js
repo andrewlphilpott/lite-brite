@@ -100,6 +100,7 @@ let obx = observable({
     firebase.database().ref(`/submissions/${SessionStore.uuid}`).on('value', function(snapshot){
       if(snapshot.val() && snapshot.val().lights) {
         obx.lights = snapshot.val().lights;
+        obx.saved = true;
       }
 
       SessionStore.finishLoading('retrieve');
