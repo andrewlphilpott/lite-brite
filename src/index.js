@@ -25,3 +25,5 @@ const router = (
 const rootEl = document.querySelector('#app');
 
 render(router, rootEl);
+
+console.log('v=0.0.1');
