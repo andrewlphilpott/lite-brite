@@ -8,14 +8,14 @@
   flex-flow: row wrap;
   height: rem(480);
   // justify-content: space-between;
-  margin: rem(40) auto;
+  margin: rem(20) auto;
   position: relative;
   user-select: none;
   width: rem(320);
 }
 .light {
   background: $black;
-  border-radius: 50%;
+  border-radius: 5%;
   margin: .5px;
   flex-basis: 5%;
 
@@ -29,6 +29,7 @@
 .light__bulb {
   @extend %btn-reset;
   @extend %color;
+  border-radius: 5%;
   display: block;
   height: rem(19);
   transform: translateZ(0);

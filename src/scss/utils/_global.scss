@@ -28,7 +28,7 @@ a, a:hover {
       background: $color;
 
       &.light__bulb {
-        box-shadow: 0 0 10px 0 $color,
+        box-shadow: 0 0 8px 0 $color,
                     inset 0 3px 5px 0 transparentize($white, .9),
                     0 2px 3px 0 transparentize($black, .5);
       }
